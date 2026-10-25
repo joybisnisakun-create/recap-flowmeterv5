@@ -655,35 +655,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
             </div>
           )}
 
-          {/* Access Permission & Security Guide (CRITICAL) */}
-          <div
-            style={{
-              padding: '12px 14px',
-              borderRadius: 8,
-              background: 'var(--surface)',
-              border: '1px solid var(--line)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 8,
-              fontSize: 12.5
-            }}
-          >
-            <div style={{ fontWeight: 600, color: 'var(--accent)', display: 'flex', alignItems: 'center', gap: 6 }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-              </svg>
-              <span>Panduan Hak Akses Google Drive (Hanya 1 Kali):</span>
-            </div>
-            <ol style={{ margin: 0, paddingLeft: 18, lineHeight: 1.55 }}>
-              <li>Buka file spreadsheet Anda di Google Drive.</li>
-              <li>Klik tombol biru <strong>Bagikan (Share)</strong> di sudut kanan atas.</li>
-              <li>Pada bagian <em>Akses umum</em>, ubah menjadi <strong>"Siapa saja yang memiliki link"</strong> dengan hak <strong>"Pelihat (Viewer)"</strong>.</li>
-              <li>Salin link spreadsheet tersebut dan tempelkan pada kolom di atas.</li>
-            </ol>
-            <div style={{ fontSize: 11.5, color: 'var(--good-tx)', background: 'var(--good-bg)', padding: '6px 10px', borderRadius: 4, border: '1px solid var(--good)' }}>
-              🔒 <b>Keamanan Terjamin:</b> Hak Edit sepenuhnya eksklusif milik akun Google Anda. Publik/staf hanya dapat membaca data yang divisualisasikan oleh dashboard.
-            </div>
-          </div>
+
         </div>
 
         {/* 2. Google Drive Owner Identity & Verification */}
@@ -798,61 +770,44 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
             </div>
           </div>
 
-          {/* Quick Action: Auto Generate Template in Drive */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, alignItems: 'center', borderTop: '1px solid var(--line)', paddingTop: 10 }}>
-            <button
-              className="btn"
-              onClick={handleCreateTemplate}
-              disabled={!!loadingAction}
-              style={{ fontWeight: 600, fontSize: 12.5 }}
-            >
-              📄 Buat Template Master 4 Tab Otomatis di Google Drive Saya
-            </button>
-            <span style={{ fontSize: 11.5, color: 'var(--muted)' }}>
-              (Membuat file baru di Drive Anda yang langsung terisi data saat ini)
-            </span>
-          </div>
+
         </div>
 
-        {/* 3. Structure Reference for 4 Tabs */}
+        {/* Contact Info */}
         <div
           style={{
             border: '1px solid var(--line)',
             borderRadius: 10,
-            padding: 16,
+            padding: 18,
             background: 'var(--bg)',
             display: 'flex',
-            flexDirection: 'column',
-            gap: 10
+            alignItems: 'center',
+            gap: 12
           }}
         >
-          <div style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--muted)', fontWeight: 600 }}>
-            3. Struktur 4 Lembar Kerja (Tab) di Spreadsheet Anda
+          <div
+            style={{
+              width: 38,
+              height: 38,
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #1baf7a, #0d8a5e)',
+              color: '#fff',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontWeight: 700,
+              fontSize: 16,
+              flexShrink: 0
+            }}
+          >
+            JF
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 8, fontSize: 12 }}>
-            <div style={{ background: 'var(--surface)', padding: 10, borderRadius: 6, border: '1px solid var(--line)' }}>
-              <div style={{ fontWeight: 700, color: 'var(--accent)' }}>1. {DEFAULT_SHEET_NAMES.monthly}</div>
-              <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 3 }}>
-                Data pemakaian bulanan (Kolom: kode, nama, group, zona, Jan 24, Feb 24...).
-              </div>
+          <div>
+            <div style={{ fontSize: 13, fontWeight: 600 }}>
+              Hubungi Joy Felix untuk update, revisi dan penjelasan jika diperlukan
             </div>
-            <div style={{ background: 'var(--surface)', padding: 10, borderRadius: 6, border: '1px solid var(--line)' }}>
-              <div style={{ fontWeight: 700, color: 'var(--accent)' }}>2. {DEFAULT_SHEET_NAMES.weekly}</div>
-              <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 3 }}>
-                Data pemakaian mingguan (Kolom: kode, nama, zona, W01 2026, W02 2026...).
-              </div>
-            </div>
-            <div style={{ background: 'var(--surface)', padding: 10, borderRadius: 6, border: '1px solid var(--line)' }}>
-              <div style={{ fontWeight: 700, color: 'var(--accent)' }}>3. {DEFAULT_SHEET_NAMES.active}</div>
-              <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 3 }}>
-                Daftar pelanggan aktif (Kolom: kode/nopel, nama pelanggan aktif).
-              </div>
-            </div>
-            <div style={{ background: 'var(--surface)', padding: 10, borderRadius: 6, border: '1px solid var(--line)' }}>
-              <div style={{ fontWeight: 700, color: 'var(--accent)' }}>4. {DEFAULT_SHEET_NAMES.contract}</div>
-              <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 3 }}>
-                Data volume kontrak meter (Kolom: nopel, kode, group, volume kontrak).
-              </div>
+            <div style={{ fontSize: 11.5, color: 'var(--muted)', marginTop: 2 }}>
+              {OWNER_EMAIL}
             </div>
           </div>
         </div>
