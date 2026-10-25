@@ -1,0 +1,9 @@
+{
+  "judul": "Rekap Flowmeter",
+  "pembuat": "Joy Felix",
+  "batas_atas": 110,
+  "batas_bawah": 80,
+  "mendekati": 5,
+  "ambang_perubahan": 30,
+  "master_spreadsheet_id": "1pG_wyRh482dkLYetz_cxGNyy6xA4kTYnBn7ElE1CKAY"
+}
